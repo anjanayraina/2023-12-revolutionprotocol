@@ -1,0 +1,40 @@
+{
+  "name": "@collectivexyz/revolution",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "clean": "turbo run clean",
+    "update-version": "changeset version && turbo run update-contract-version",
+    "release": "turbo run build && changeset publish"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8",
+    "prettier-plugin-solidity": "1.1.3",
+    "solhint": "3.4.1",
+    "turbo": "latest",
+    "@changesets/cli": "^2.27.1"
+  },
+  "packageManager": "pnpm@8.9.2",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@openzeppelin/**",
+      "**/ds-test",
+      "**/forge-std",
+      "**/solmate"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/collectivexyz/revolution-protocol/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collectivexyz/revolution-protocol.git"
+  }
+}
